@@ -14,7 +14,8 @@
     "test": "jest -i tests/",
     "format": "prettier --write '**/*.ts'",
     "format:verify": "prettier --check '**/*.ts'",
-    "prepack": "yarn format && yarn build"
+    "prepack": "yarn format && yarn build",
+    "postinstall": "yarn build"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
