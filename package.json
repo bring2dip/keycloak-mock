@@ -1,13 +1,17 @@
 {
-  "name": "keycloak-mock",
-  "version": "1.0.10",
-  "description": "Keycloak server mock for Node.js",
+  "name": "bring2dip-keycloak-mock",
+  "version": "1.2.0",
+  "description": "Keycloak server mock for Node.js (Modified to support role)",
   "main": "dist/index.js",
   "repository": "https://github.com/SectorLabs/keycloak-mock",
   "author": "Sector Labs <open-source@sectorlabs.ro>",
   "license": "MIT",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsc",

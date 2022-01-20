@@ -96,4 +96,27 @@ const createMockInstance = async (
   });
 };
 
-export { MockInstance, createMockInstance };
+const createPersistedMockInstance = async (
+  options: CreateMockInstanceOptions,
+  key: JWK.RawKey,
+): Promise<MockInstance> => {
+  const store = await JWK.createKeyStore();
+
+  const defaultKey = await store.add(key);
+
+  const database = new MockDatabase();
+
+  // create a service account if we have a client secret key
+  if (options.clientSecret) {
+    database.createServiceUser(options.clientID, options.clientSecret);
+  }
+
+  return new MockInstance(store, defaultKey, database, {
+    authServerURL: options.authServerURL,
+    clientID: options.clientID,
+    clientSecret: options.clientSecret || null,
+    realm: options.realm,
+  });
+};
+
+export { MockInstance, createMockInstance, createPersistedMockInstance };
