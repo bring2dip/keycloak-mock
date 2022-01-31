@@ -11,6 +11,7 @@ export {
   MockInstanceParams,
   CreateMockInstanceOptions,
   createMockInstance,
+  createPersistedMockInstance,
 } from "./instance";
 export {
   default as MockDatabase,

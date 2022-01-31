@@ -98,7 +98,7 @@ const createMockInstance = async (
 
 const createPersistedMockInstance = async (
   options: CreateMockInstanceOptions,
-  key: JWK.RawKey,
+  key: JWK.RawKey
 ): Promise<MockInstance> => {
   const store = await JWK.createKeyStore();
 
